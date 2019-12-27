@@ -14,7 +14,7 @@ $ sudo apt-get update
 $ sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
 ```
 
-![1](./report src/1.png)
+![1](./reportsrc/1.png)
 
 ##### 3. 添加Docker官方的GPG密钥：
 
@@ -22,7 +22,7 @@ $ sudo apt-get install -y apt-transport-https ca-certificates curl software-prop
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
-![2](./report src/2.png)
+![2](./reportsrc/2.png)
 
 显示添加成功。
 
@@ -32,7 +32,7 @@ $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ```
 
-![3](./report src/3.png)
+![3](./reportsrc/3.png)
 
 ##### 5. 再次更新apt包索引：
 
@@ -40,7 +40,7 @@ $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ub
 $ sudo apt-get update
 ```
 
-![4](./report src/4.png)
+![4](./reportsrc/4.png)
 
 ##### 6. 安装最新版本的Docker CE
 
@@ -50,7 +50,7 @@ $ sudo apt-get update
 $ sudo apt-get install -y docker-ce
 ```
 
-![5](./report src/5.png)
+![5](./reportsrc/5.png)
 
 输入安装命令后，输出以上信息。接下来，验证docker是否安装成功。
 
@@ -60,7 +60,7 @@ $ sudo apt-get install -y docker-ce
 $ systemctl status docker
 ```
 
-![6](./report src/6.png)
+![6](./reportsrc/6.png)
 
 输出以上语句，表明docker服务已经成功启动，现在我们可以开始使用docker了。
 
@@ -74,7 +74,7 @@ $ systemctl status docker
 $ docker version
 ```
 
-![7](./report src/7.png)
+![7](./reportsrc/7.png)
 
 输出以上语句，提示没有权限连接到unix socket，使用管理员权限运行该命令：
 
@@ -82,7 +82,7 @@ $ docker version
 $ sudo docker version
 ```
 
-![8](./report src/8.png)
+![8](./reportsrc/8.png)
 
 可以看到，docker正常运行。
 
@@ -92,7 +92,7 @@ $ sudo docker version
 $ sudo docker run hello-world
 ```
 
-![9](./report src/9.png)
+![9](./reportsrc/9.png)
 
 可以看到，hello-world运行成功。
 
@@ -102,7 +102,7 @@ $ sudo docker run hello-world
 $ sudo docker images
 ```
 
-![10](./report src/10.png)
+![10](./reportsrc/10.png)
 
 ##### 4. 显示运行中容器
 
@@ -110,7 +110,7 @@ $ sudo docker images
 $ sudo docker ps
 ```
 
-![11](./report src/11.png)
+![11](./reportsrc/11.png)
 
 因为hello-world已经运行完了，因此没有容器正在运行。
 
@@ -120,7 +120,7 @@ $ sudo docker ps
 $ sudo docker ps -a
 ```
 
-![12](./report src/12.png)
+![12](./reportsrc/12.png)
 
 刚刚运行了两次hello-world，因此这里有两个hello-world的容器。
 
@@ -132,7 +132,7 @@ $ sudo docker ps -a
 $ sudo docker run -i -t ubuntu /bin/bash
 ```
 
-![13](./report src/13.png)
+![13](./reportsrc/13.png)
 
 进入交互式界面后，在另一终端输入
 
@@ -142,11 +142,11 @@ $ sudo docker ps
 
 可以看到ubuntu容器正在运行：
 
-![14](./report src/14.png)
+![14](./reportsrc/14.png)
 
 输入`exit`停止容器：
 
-![15](./report src/15.png)
+![15](./reportsrc/15.png)
 
 ##### 7. 重启容器
 
@@ -182,7 +182,7 @@ $ sudo docker attach 358740e02371
 $ sudo docker pull mysql:5.7
 ```
 
-![16](./report src/16.png)
+![16](./reportsrc/16.png)
 
 该过程耗时较久，需要耐性等待。
 
@@ -200,7 +200,7 @@ CMD ["-c"]
 $ sudo docker build . -t hello
 ```
 
-![17](./report src/17.png)
+![17](./reportsrc/17.png)
 
 可以看到，镜像已经成功生成。运行容器：
 
@@ -225,13 +225,13 @@ $ sudo docker run -it --net host mysql:5.7 "sh"
 $ mysql -h127.0.0.1 -P3306 -uroot -proot
 ```
 
-![19](./report src/19.png)
+![19](./reportsrc/19.png)
 
 一开始启动mysql的时候遇到了问题：
 
-![20](./report src/20.png)
+![20](./reportsrc/20.png)
 
 经过网上查找办法后，在我的`/etc/mysql/mariadb.conf.d/50-server.cnf`文件的`[mysqld]`字段下增加了`skip-grant-tables`字段，然后便可以正常登录mySQL：
 
-![21](./report src/21.png)
+![21](./reportsrc/21.png)
 
