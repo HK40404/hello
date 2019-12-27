@@ -210,7 +210,7 @@ $ sudo docker run -it --rm hello -H
 
 成功运行后，终端会一直输出相关的信息：
 
-![18](/Users/HK/Desktop/上课/编译原理/homework7/18.png)
+![18](./reportsrc/18.png)
 
 然后便可以运行MySQL服务器：
 
